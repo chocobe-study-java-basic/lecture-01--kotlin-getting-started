@@ -63,4 +63,22 @@ class KotlinKeyFeatureTest {
         val fruitsSet = setOf("Apple", "Banana", "Pear", "Grape")
         val fruitsMuSet = mutableSetOf("Apple", "Banana", "Pear", "Grape")
     }
+
+    @Test
+    fun controlFlow() {
+        val maxNum = max(1, 3)
+        println(maxNum)
+
+        val numberType = getNumberType(10)
+        println(numberType)
+    }
+
+    private fun max(num1: Int, num2: Int) = if (num1 > num2) num1 else num2
+
+    private fun getNumberType(number: Int) = when {
+        number < 0 -> "음수"
+        number == 0 -> "제로"
+        number > 0 -> "양수"
+        else -> "Unknown"
+    }
 }
